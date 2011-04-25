@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nessie.Components</name>
+    </assembly>
+    <members>
+        <member name="P:Nessie.Components.SceneSystem.SceneManager">
+            <summary></summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,2 @@
+Content\graphics\background.xnb
+Content\fonts\standard.xnb
