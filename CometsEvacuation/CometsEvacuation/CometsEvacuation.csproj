@@ -91,13 +91,13 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="Nessie.Base">
-      <HintPath>..\..\..\..\Illegal Sheep\Code\Nessie\Build\Release\Nessie.Base.dll</HintPath>
+      <HintPath>..\..\..\Nessie\Build\Release\Nessie.Base.dll</HintPath>
     </Reference>
     <Reference Include="Nessie.Components">
-      <HintPath>..\..\..\..\Illegal Sheep\Code\Nessie\Build\Release\Nessie.Components.dll</HintPath>
+      <HintPath>..\..\..\Nessie\Build\Release\Nessie.Components.dll</HintPath>
     </Reference>
     <Reference Include="Nessie.Xna">
-      <HintPath>..\..\..\..\Illegal Sheep\Code\Nessie\Build\Release\Nessie.Xna.dll</HintPath>
+      <HintPath>..\..\..\Nessie\Build\Release\Nessie.Xna.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Private>False</Private>
@@ -128,6 +128,7 @@
     <Compile Include="Components\MovementBoundariesComponent.cs" />
     <Compile Include="Components\ParticleEmitterComponent.cs" />
     <Compile Include="Components\RotationComponent.cs" />
+    <Compile Include="ParticleFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="CometsGame.cs" />

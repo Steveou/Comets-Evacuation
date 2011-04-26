@@ -1,0 +1,19 @@
+﻿<config Version="2">
+  <OutputFolder>$(AppDir)</OutputFolder>
+  <ReportFolderNetFull>$(SystemRoot)\Temp\EQATECProfilerLogs</ReportFolderNetFull>
+  <ReportFolderNetCF>\Temp\EQATECProfilerLogs</ReportFolderNetCF>
+  <AutoSnapshot>Main OnStop ApplicationEnd</AutoSnapshot>
+  <TinyMethodAction>Skip</TinyMethodAction>
+  <ServerControlHost />
+  <ServerControlPort>4515</ServerControlPort>
+  <RuntimeModuleLogLevel>Errors</RuntimeModuleLogLevel>
+  <ExcludeFiles>
+    <ExcludeFile>SlimMath.dll</ExcludeFile>
+    <ExcludeFile>Nessie.Xna.dll</ExcludeFile>
+    <ExcludeFile>Nessie.Components.dll</ExcludeFile>
+    <ExcludeFile>Nessie.Base.dll</ExcludeFile>
+  </ExcludeFiles>
+  <SignActions />
+  <AppType>FullNet</AppType>
+  <InputFolderOK>true</InputFolderOK>
+</config>

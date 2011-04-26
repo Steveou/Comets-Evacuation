@@ -36,75 +36,76 @@ namespace CometsEvacuation.Systems
                 var movable = obj.Get<MovableComponent>();
                 var collision = obj.Get<CollisionComponent>();
 
+                Vector2 offset = movable.Velocity * movable.Speed * (float)elapsedSeconds;
+
                 if (collision != null)
                 {
-                    Vector2 offset = movable.Velocity * movable.Speed * (float)elapsedSeconds;
-
-                    // Check for boundaries component.
-                    var boundaries = obj.Get<MovementBoundariesComponent>();
-                    if (boundaries != null)
+                    if (offset != Vector2.Zero)
                     {
-                        if (!boundaries.Box.Contains(collision.Box, -offset))
+                        // Check for boundaries component.
+                        var boundaries = obj.Get<MovementBoundariesComponent>();
+                        if (boundaries != null)
                         {
-                            HandleCollision(obj, null);
-                            collisionHappens = true;
-                        }
-                    }
-
-                    if (!collisionHappens)
-                    {
-                        foreach (var obj2 in SceneManager.GameObjects.Get<CollisionComponent>())
-                        {
-                            if (obj != obj2)
+                            if (!boundaries.Box.Contains(collision.Box, -offset))
                             {
-                                var collision2 = obj2.Get<CollisionComponent>();
+                                HandleCollision(obj, null);
+                                collisionHappens = true;
+                            }
+                        }
 
-                                if (collision.Box.Intersects(collision2.Box, offset))
+                        if (!collisionHappens)
+                        {
+                            foreach (var obj2 in SceneManager.GameObjects.Get<CollisionComponent>())
+                            {
+                                if (obj != obj2)
                                 {
-                                    HandleCollision(obj, obj2);
-                                    collisionHappens = true;
-                                    break;
+                                    var collision2 = obj2.Get<CollisionComponent>();
+
+                                    if (collision.Box.Intersects(collision2.Box, offset))
+                                    {
+                                        HandleCollision(obj, obj2);
+                                        collisionHappens = true;
+                                        break;
+                                    }
                                 }
                             }
                         }
-                    }
 
-                    if (!collisionHappens)
-                    {
-                        // No Collision happens!
-                        transform.Position += offset;
-                        collision.UpdatePosition(transform.Position);
+                        if (!collisionHappens)
+                        {
+                            // No Collision happens!
+                            transform.Position += offset;
+                            collision.UpdatePosition(transform.Position);
+                            
+                        }
                     }
                 }
                 else
                 {
                     // Object just moves but cannot collide.
-                    Vector2 offset = movable.Velocity * movable.Speed * (float)elapsedSeconds;
                     transform.Position += offset;
                 }
             }
 
             // Delete destroyed objects.
-            for(int i = toDestroy.Count - 1; i > 0; i--)
+            foreach(var destroy in toDestroy)
             {
-                SceneManager.GameObjects.Remove(toDestroy[i]);
+                SceneManager.GameObjects.Remove(destroy);
             }
             toDestroy.Clear();
-            
-            
         }
 
         private void HandleCollision(GameObject object1, GameObject object2)
         {
-            if (object1 != null && object1.Get<DestroyableComponent>() != null)
+            if (GameObject.HasComponent<DestroyableComponent>(object1))
                 toDestroy.Add(object1);
 
-            if (object2 != null && object2.Get<DestroyableComponent>() != null)
+            if (GameObject.HasComponent<DestroyableComponent>(object2))
                 toDestroy.Add(object2);
 
             // Check whether it's destroyable or explodable
             // If so, well, then destroy them
-            if(Collision != null)
+            if (Collision != null)
                 Collision(this, new CollisionEventArgs(object1, object2));
         }
     }

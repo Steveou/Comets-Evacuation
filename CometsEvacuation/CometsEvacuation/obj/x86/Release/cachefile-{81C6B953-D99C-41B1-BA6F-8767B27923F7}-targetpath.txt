@@ -1,0 +1,4 @@
+Content\graphics\background.xnb
+Content\fonts\standard.xnb
+Content\graphics\comet1.xnb
+Content\graphics\comet2.xnb

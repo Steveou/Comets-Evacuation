@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Nessie.Xna;
 using CometsEvacuation.Components;
 using Microsoft.Xna.Framework.Content;
+using CometsEvacuation.Systems;
 
 namespace CometsEvacuation
 {
@@ -36,6 +37,7 @@ namespace CometsEvacuation
 
         public void CreateBackground()
         {
+          
             CreateSprite(
                 "background",
                 "background",
@@ -85,16 +87,16 @@ namespace CometsEvacuation
                 "stone",
                 "stones",
                 typeof(BasicSpriteComponent), typeof(MovementBoundariesComponent), typeof(GravitationComponent),
-                typeof(DestroyableComponent)
+                typeof(DestroyableComponent), typeof(ExplodableComponent)
                 );
 
-            stone.Get<TextureComponent>().Texture = game.Content.Load<Texture2D>("graphics/stone");
+            stone.Get<TextureComponent>().Texture = game.Content.Load<Texture2D>("graphics/comet1");
 
             stone.Get<TransformComponent>().Position = new Vector2(
                 (float)random.NextDouble() * game.ScreenWidth,
                 -stone.Get<TextureComponent>().Texture.Height
                 );
-            
+
             stone.Get<MovableComponent>().Speed = 1.0f;
             stone.Get<MovementBoundariesComponent>().Box = new CollisionBox(
                 0, -stone.Get<TextureComponent>().Texture.Height,
@@ -107,6 +109,16 @@ namespace CometsEvacuation
                 stone.Get<TextureComponent>().Texture.Height
                 );
 
+            stone.Get<ExplodableComponent>().MaxParticles = 40;
+            stone.Get<ExplodableComponent>().ParticleFactory = new ParticleFactory(
+                new List<Texture2D>() { game.Content.Load<Texture2D>("graphics/comet1"), game.Content.Load<Texture2D>("graphics/comet2") },
+                3, 7,
+                new Color(255, 255, 255, 255),
+                100, 256,
+                new Vector2(-100, -100), new Vector2(100, 100),
+                0.2f, 0.5f,
+                1, 3
+                );
             return stone;
         }
 

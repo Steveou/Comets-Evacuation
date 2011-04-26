@@ -16,3 +16,18 @@ E:\Visual Studio 2010\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86
 E:\Visual Studio 2010\CometsEvacuation\CometsEvacuation\CometsEvacuation\obj\x86\Debug\CometsEvacuation.exe
 E:\Visual Studio 2010\CometsEvacuation\CometsEvacuation\CometsEvacuation\obj\x86\Debug\CometsEvacuation.pdb
 E:\Visual Studio 2010\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Debug\Content\fonts\standard.xnb
+E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Debug\Content\graphics\background.xnb
+E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Debug\Content\fonts\standard.xnb
+E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Debug\CometsEvacuation.exe
+E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Debug\CometsEvacuation.pdb
+E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Debug\SlimMath.dll
+E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Debug\Nessie.Base.pdb
+E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Debug\Nessie.Base.xml
+E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Debug\Nessie.Components.pdb
+E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Debug\Nessie.Xna.pdb
+E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Debug\SlimMath.xml
+E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\obj\x86\Debug\CometsEvacuation.exe
+E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\obj\x86\Debug\CometsEvacuation.pdb
+E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Debug\Nessie.Components.dll

@@ -19,6 +19,8 @@ namespace CometsEvacuation.Screens
         private TimeSpan elapsedTime;
         private TimeSpan lastCometSpawn;
 
+        private ParticleEmittersSystem particles;
+
         private int currentScore;
 
         public MainScreen(NessieGame game)
@@ -41,12 +43,17 @@ namespace CometsEvacuation.Screens
 
             SetMockTextures();
 
+            
             SceneManager.AddSystem(new SpriteSystem(spriteBatch));
 
             var collisionSystem = new CollisionSystem();
             collisionSystem.Collision += OnCollision;
 
             SceneManager.AddSystem(collisionSystem);
+
+            particles = new ParticleEmittersSystem(spriteBatch, collisionSystem);
+
+            SceneManager.AddSystem(particles);
             SceneManager.AddSystem(new KeyboardMovementSystem());
             SceneManager.AddSystem(new GravitationSystem() { Gravitation = 600f, MaxFallSpeed = 600f });
 
@@ -82,12 +89,14 @@ namespace CometsEvacuation.Screens
 
             UpdateSpawn(elapsedSeconds);
 
+            Game.Window.Title = "Particles: " + particles.ParticlesCount.ToString();
+
             base.Update(elapsedSeconds);
         }
 
         public override void Draw(double elapsedSeconds)
         {
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.NonPremultiplied);
 
             base.Draw(elapsedSeconds);
 
