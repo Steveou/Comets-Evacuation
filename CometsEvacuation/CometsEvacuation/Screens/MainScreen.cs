@@ -6,7 +6,6 @@ using Nessie.Xna;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
-using Nessie.Xna.Components.Systems;
 using CometsEvacuation.Systems;
 
 namespace CometsEvacuation.Screens
@@ -18,10 +17,12 @@ namespace CometsEvacuation.Screens
 
         private TimeSpan elapsedTime;
         private TimeSpan lastCometSpawn;
+        private TimeSpan lastPersonSpawn;
 
         private ParticleEmittersSystem particles;
 
         private int currentScore;
+        private int currentRescuedScore;
 
         public MainScreen(NessieGame game)
             : base(game)
@@ -55,6 +56,7 @@ namespace CometsEvacuation.Screens
 
             SceneManager.AddSystem(particles);
             SceneManager.AddSystem(new KeyboardMovementSystem());
+            SceneManager.AddSystem(new RotationSystem());
             SceneManager.AddSystem(new GravitationSystem() { Gravitation = 600f, MaxFallSpeed = 600f });
 
             factory.CreateBackground();
@@ -100,7 +102,9 @@ namespace CometsEvacuation.Screens
 
             base.Draw(elapsedSeconds);
 
-            spriteBatch.DrawString(Game.Content.Load<SpriteFont>("fonts/standard"), currentScore.ToString(), Vector2.Zero, Color.Black);
+            spriteBatch.DrawString(Game.Content.Load<SpriteFont>("fonts/standard"), "Stones Destroyed: " + currentScore.ToString(), Vector2.Zero, Color.Black);
+            spriteBatch.DrawString(Game.Content.Load<SpriteFont>("fonts/standard"), "Aliens Rescued: " + currentRescuedScore.ToString(), new Vector2(0, 30), Color.Black);
+
 
             spriteBatch.End();
         }
@@ -123,7 +127,12 @@ namespace CometsEvacuation.Screens
                 factory.CreateStone();
             }
 
+            if (elapsedTime - lastPersonSpawn > TimeSpan.FromSeconds(1f))
+            {
+                lastPersonSpawn = elapsedTime;
 
+                factory.CreatePerson();
+            }
         }
 
         private void OnCollision(object sender, CollisionEventArgs args)
@@ -137,6 +146,9 @@ namespace CometsEvacuation.Screens
                 {
                     currentScore++;
                 }
+
+                if (name2 == "target_coll")
+                    currentRescuedScore++;
             }
         }
     }

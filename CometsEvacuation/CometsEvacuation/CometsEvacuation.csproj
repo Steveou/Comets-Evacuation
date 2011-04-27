@@ -126,7 +126,6 @@
     <Compile Include="Components\KeyboardMovementComponent.cs" />
     <Compile Include="Components\MovableComponent.cs" />
     <Compile Include="Components\MovementBoundariesComponent.cs" />
-    <Compile Include="Components\ParticleEmitterComponent.cs" />
     <Compile Include="Components\RotationComponent.cs" />
     <Compile Include="ParticleFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -139,7 +138,10 @@
     <Compile Include="Systems\GravitationSystem.cs" />
     <Compile Include="Systems\KeyboardMovementSystem.cs" />
     <Compile Include="Systems\ParticleEmittersSystem.cs" />
+    <Compile Include="Systems\RotationSystem.cs" />
     <Compile Include="Systems\SpriteAnimationSystem.cs" />
+    <Compile Include="Systems\SpriteSystem.cs" />
+    <Compile Include="Timers.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />

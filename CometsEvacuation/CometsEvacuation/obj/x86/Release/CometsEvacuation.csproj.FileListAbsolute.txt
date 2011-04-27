@@ -18,3 +18,6 @@ E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\obj\x86
 E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\obj\x86\Release\CometsEvacuation.pdb
 E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Release\Content\graphics\comet1.xnb
 E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Release\Content\graphics\comet2.xnb
+E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Release\Content\graphics\person.xnb
+E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Release\Content\graphics\blood.xnb
+E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Release\Content\graphics\alien.xnb

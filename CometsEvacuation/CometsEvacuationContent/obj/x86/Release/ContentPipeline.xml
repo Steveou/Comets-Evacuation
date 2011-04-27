@@ -37,6 +37,33 @@
       <Output>E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Release\Content\graphics\comet2.xnb</Output>
       <Time>2011-04-26T21:23:51.9563983+02:00</Time>
     </Item>
+    <Item>
+      <Source>graphics\person.png</Source>
+      <Name>graphics\person</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Release\Content\graphics\person.xnb</Output>
+      <Time>2011-04-27T16:55:07.4439518+02:00</Time>
+    </Item>
+    <Item>
+      <Source>graphics\blood.png</Source>
+      <Name>graphics\blood</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Release\Content\graphics\blood.xnb</Output>
+      <Time>2011-04-27T17:32:59.6279133+02:00</Time>
+    </Item>
+    <Item>
+      <Source>graphics\alien.png</Source>
+      <Name>graphics\alien</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Release\Content\graphics\alien.xnb</Output>
+      <Time>2011-04-27T17:30:16.1555632+02:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

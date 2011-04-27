@@ -15,21 +15,32 @@ namespace CometsEvacuation.Components
 
         // BoundingBoxes...
 
+        public Vector2 Origin;
+
+        public List<string> collidesWith;
+
         public CollisionComponent()
         {
+            
+        }
+
+        public override void SetDefaultValues()
+        {
             Box = new CollisionBox();
+
+            collidesWith = new List<string>();
         }
 
         public void UpdatePosition(Vector2 position)
         {
-            Box.Left = position.X;
-            Box.Top = position.Y;
+            Box.Left = position.X - Origin.X;
+            Box.Top = position.Y - Origin.Y;
         }
 
         public void SetValues(Vector2 position, float width, float height)
         {
-            Box.Left = position.X;
-            Box.Top = position.Y;
+            Box.Left = position.X - Origin.X;
+            Box.Top = position.Y - Origin.X;
 
             Box.Width = width;
             Box.Height = height;

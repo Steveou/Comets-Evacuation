@@ -54,11 +54,21 @@ namespace CometsEvacuation.Systems
 
         private void collisionSystem_Collision(object sender, CollisionEventArgs e)
         {
-            if (GameObject.HasComponent<ExplodableComponent>(e.Object1))
+            if (GameObject.HasComponent<ExplodableComponent>(e.Object1) && ExplodesWith(e.Object1, e.Object2))
                 CreateParticles(e.Object1);
 
-            if (GameObject.HasComponent<ExplodableComponent>(e.Object2))
+            if (GameObject.HasComponent<ExplodableComponent>(e.Object2) && ExplodesWith(e.Object2, e.Object1))
                 CreateParticles(e.Object2);
+        }
+
+        private bool ExplodesWith(GameObject object1, GameObject object2)
+        {
+            var explodable = object1.Get<ExplodableComponent>();
+
+            if (explodable.explodesWith.Count == 0 || explodable.explodesWith.Contains(object2.GroupName))
+                return true;
+
+            return false;
         }
 
         public void CreateParticles(GameObject obj)
@@ -113,11 +123,6 @@ namespace CometsEvacuation.Systems
                     particles.Remove(particles[i]);
 
                 }
-
-            }
-
-            foreach (var obj in SceneManager.GameObjects.Get<ParticleEmitterComponent>())
-            {
 
             }
         }

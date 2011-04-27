@@ -2,3 +2,6 @@ Content\graphics\background.xnb
 Content\fonts\standard.xnb
 Content\graphics\comet1.xnb
 Content\graphics\comet2.xnb
+Content\graphics\person.xnb
+Content\graphics\blood.xnb
+Content\graphics\alien.xnb

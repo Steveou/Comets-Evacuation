@@ -61,7 +61,7 @@ namespace CometsEvacuation.Systems
                                 {
                                     var collision2 = obj2.Get<CollisionComponent>();
 
-                                    if (collision.Box.Intersects(collision2.Box, offset))
+                                    if (CollidesWith(collision, obj2) && collision.Box.Intersects(collision2.Box, offset))
                                     {
                                         HandleCollision(obj, obj2);
                                         collisionHappens = true;
@@ -97,16 +97,34 @@ namespace CometsEvacuation.Systems
 
         private void HandleCollision(GameObject object1, GameObject object2)
         {
-            if (GameObject.HasComponent<DestroyableComponent>(object1))
+            if (GameObject.HasComponent<DestroyableComponent>(object1) && GetsDestroyed(object1, object2))
                 toDestroy.Add(object1);
 
-            if (GameObject.HasComponent<DestroyableComponent>(object2))
+            if (GameObject.HasComponent<DestroyableComponent>(object2) && GetsDestroyed(object2, object1))
                 toDestroy.Add(object2);
 
             // Check whether it's destroyable or explodable
             // If so, well, then destroy them
             if (Collision != null)
                 Collision(this, new CollisionEventArgs(object1, object2));
+        }
+
+        private bool CollidesWith(CollisionComponent collision, GameObject object2)
+        {
+            if (collision.collidesWith.Count == 0 || collision.collidesWith.Contains(object2.GroupName))
+                return true;
+
+            return false;
+        }
+
+        private bool GetsDestroyed(GameObject object1, GameObject object2)
+        {
+            var destroy = object1.Get<DestroyableComponent>();
+
+            if (destroy.getsDestroyedBy.Count == 0 || destroy.getsDestroyedBy.Contains(object2.GroupName))
+                return true;
+
+            return false;
         }
     }
 }
