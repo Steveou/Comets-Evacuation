@@ -76,7 +76,6 @@ namespace CometsEvacuation.Systems
                             // No Collision happens!
                             transform.Position += offset;
                             collision.UpdatePosition(transform.Position);
-                            
                         }
                     }
                 }

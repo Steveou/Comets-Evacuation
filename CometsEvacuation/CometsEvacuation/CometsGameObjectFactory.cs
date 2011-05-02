@@ -45,11 +45,23 @@ namespace CometsEvacuation
                 game.Content.Load<Texture2D>("graphics/background")
                 );
 
-            CreateSprite(
-                "target",
-                "background",
-                new Vector2(game.ScreenWidth - 50, game.ScreenHeight - 250),
-                game.Content.Load<Texture2D>("graphics/target")
+            GameObject targetHouse = CreateObject(
+                "target_coll1",
+                "target_coll1",
+                typeof(BasicSpriteComponent),
+                typeof(TransformComponent), typeof(CollisionComponent)
+                );
+
+            targetHouse.Get<TextureComponent>().Texture = game.Content.Load<Texture2D>("graphics/target");
+
+            //targetHouse.Get<BasicSpriteComponent>().Depth = 1;
+
+            targetHouse.Get<TransformComponent>().Position = new Vector2(game.ScreenWidth - 50, game.ScreenHeight - 182);
+
+            targetHouse.Get<CollisionComponent>().SetValues(
+                targetHouse.Get<TransformComponent>().Position,
+                100,
+                100
                 );
 
             GameObject target = CreateObject(
@@ -90,7 +102,7 @@ namespace CometsEvacuation
                 paddle.Get<TextureComponent>().Texture.Height
                 );
             paddle.Get<CollisionComponent>().collidesWith.Add("stones");
-            paddle.Get<CollisionComponent>().collidesWith.Add("target_coll");
+            paddle.Get<CollisionComponent>().collidesWith.Add("target_coll1");
 
             return paddle;
         }
@@ -114,7 +126,7 @@ namespace CometsEvacuation
                 -stone.Get<TextureComponent>().Texture.Height
                 );
 
-            stone.Get<MovableComponent>().Speed = 1.0f;
+            stone.Get<MovableComponent>().Speed = (float)(random.NextDouble() * 3.0) + 0.1f;
             stone.Get<MovementBoundariesComponent>().Box = new CollisionBox(
                 0, -stone.Get<TextureComponent>().Texture.Height * 2,
                 game.ScreenWidth + stone.Get<TextureComponent>().Texture.Width,
@@ -128,6 +140,7 @@ namespace CometsEvacuation
                 );
             stone.Get<CollisionComponent>().collidesWith.Add("persons");
             stone.Get<CollisionComponent>().collidesWith.Add("paddle");
+            stone.Get<CollisionComponent>().collidesWith.Add("target_coll1");
 
             stone.Get<RotationComponent>().Origin = stone.Get<CollisionComponent>().Origin;
             stone.Get<RotationComponent>().RotationSpeed = random.Next(-17, 17);
@@ -155,7 +168,6 @@ namespace CometsEvacuation
                 typeof(ExplodableComponent), typeof(RotationComponent)
                 );
 
-
             person.Get<TextureComponent>().Texture = game.Content.Load<Texture2D>("graphics/alien");
 
             person.Get<TransformComponent>().Position = new Vector2(
@@ -166,13 +178,6 @@ namespace CometsEvacuation
             person.Get<MovableComponent>().Speed = random.Next(130, 270);
             person.Get<MovableComponent>().Velocity = new Vector2(1.0f, 0);
 
-            /*
-            person.Get<MovementBoundariesComponent>().Box = new CollisionBox(
-                -person.Get<TextureComponent>().Texture.Width * 2,
-                -person.Get<TextureComponent>().Texture.Height * 2,
-                game.ScreenWidth + person.Get<TextureComponent>().Texture.Width,
-                game.ScreenHeight + person.Get<TextureComponent>().Texture.Height * 2);
-            */
             person.Get<CollisionComponent>().Origin = person.Get<TextureComponent>().Texture.GetCenter();
             person.Get<CollisionComponent>().SetValues(
                 person.Get<TransformComponent>().Position,
@@ -201,9 +206,84 @@ namespace CometsEvacuation
             return person;
         }
 
-        public GameObject CreateParachute()
+        public Tuple<GameObject, GameObject> CreateParachute()
         {
-            throw new NotImplementedException();
+            // Parachute consists of two objects. The parachute and the item below.
+
+            GameObject parachute = CreateObject(
+                "parachute",
+                "parachutes",
+                typeof(BasicSpriteComponent),
+             //   typeof(CollisionComponent),
+                typeof(DestroyableComponent),
+                typeof(GravitationComponent)
+                );
+
+            parachute.Get<TextureComponent>().Texture = game.Content.Load<Texture2D>("graphics/parachute");
+
+            parachute.Get<TransformComponent>().Position = new Vector2(
+                (float)random.NextDouble() * game.ScreenWidth - 50,
+                -parachute.Get<TextureComponent>().Texture.Height
+                );
+
+            parachute.Get<MovableComponent>().Speed = (float)(random.NextDouble()) + 0.1f;
+            /*
+            parachute.Get<CollisionComponent>().SetValues(
+                parachute.Get<TransformComponent>().Position,
+                parachute.Get<TextureComponent>().Texture.Width,
+                parachute.Get<TextureComponent>().Texture.Height
+                );
+            */
+          //  parachute.Get<CollisionComponent>().collidesWith.Add("paddle");
+          //  parachute.Get<CollisionComponent>().collidesWith.Add("paddle");
+          //  parachute.Get<CollisionComponent>().collidesWith.Add("target_coll1");
+
+            GameObject item = CreateObject(
+                "item",
+                "items",
+                typeof(BasicSpriteComponent), typeof(MovementBoundariesComponent),
+                typeof(CollisionComponent),
+                typeof(DestroyableComponent),
+                typeof(ExplodableComponent),
+                typeof(ItemComponent),
+                typeof(GravitationComponent)
+                );
+
+            item.Get<TextureComponent>().Texture = game.Content.Load<Texture2D>("graphics/items/item1");
+
+            item.Get<TransformComponent>().Position = new Vector2(
+                parachute.Get<TransformComponent>().Position.X + 76f,
+                parachute.Get<TransformComponent>().Position.Y  + 201f
+                );
+
+            item.Get<MovementBoundariesComponent>().Box = new CollisionBox(
+                0, -item.Get<TextureComponent>().Texture.Height * 2,
+                game.ScreenWidth + item.Get<TextureComponent>().Texture.Width,
+                game.ScreenHeight + item.Get<TextureComponent>().Texture.Height * 2);
+
+            item.Get<MovableComponent>().Speed = parachute.Get<MovableComponent>().Speed;
+
+          //  item.Get<CollisionComponent>().Origin = item.Get<TextureComponent>().Texture.GetCenter();
+            item.Get<CollisionComponent>().SetValues(
+                item.Get<TransformComponent>().Position,
+                item.Get<TextureComponent>().Texture.Width,
+                item.Get<TextureComponent>().Texture.Height
+                );
+            item.Get<CollisionComponent>().collidesWith.Add("paddle");
+            item.Get<CollisionComponent>().collidesWith.Add("target_coll1");
+
+            item.Get<ExplodableComponent>().MaxParticles = 40;
+            item.Get<ExplodableComponent>().ParticleFactory = new ParticleFactory(
+                new List<Texture2D>() { game.Content.Load<Texture2D>("graphics/ball") },
+                2, 4,
+                Color.Blue,
+                100, 256,
+                new Vector2(-200, -400), new Vector2(200, 0),
+                0.1f, 0.4f,
+                0, 0
+                );
+
+            return new Tuple<GameObject, GameObject>(parachute, item);
         }
 
         public GameObject CreateItem()

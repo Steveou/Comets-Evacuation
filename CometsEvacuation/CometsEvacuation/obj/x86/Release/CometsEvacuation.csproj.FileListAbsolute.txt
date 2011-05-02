@@ -21,3 +21,14 @@ E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86
 E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Release\Content\graphics\person.xnb
 E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Release\Content\graphics\blood.xnb
 E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Release\Content\graphics\alien.xnb
+E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Release\Content\graphics\parachute.xnb
+E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Release\Content\graphics\items\item1.xnb
+E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Release\Content\graphics\items\item2.xnb
+E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Release\Content\graphics\items\item3.xnb
+E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Release\Content\graphics\items\item4.xnb
+E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Release\Content\graphics\items\item6.xnb
+E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Release\Content\graphics\items\item7.xnb
+E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Release\Content\graphics\items\item8.xnb
+E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Release\Content\graphics\paddle.xnb
+E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Release\Content\graphics\target.xnb
+E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Release\Content\graphics\ball.xnb

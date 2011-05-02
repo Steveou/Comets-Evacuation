@@ -23,8 +23,8 @@ namespace CometsEvacuation
             Graphics.PreferredBackBufferWidth = 1024;
             Graphics.PreferredBackBufferHeight = 768;
 
-            Content = new MockContentManager(Services) { UseMocks = true };
-            Content.RootDirectory = "Content";
+     //       Content = new MockContentManager(Services) { UseMocks = true };
+     //       Content.RootDirectory = "Content";
         }
 
         /// <summary>

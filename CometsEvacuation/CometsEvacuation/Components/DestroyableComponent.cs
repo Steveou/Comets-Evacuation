@@ -6,7 +6,7 @@ using Nessie.Components;
 
 namespace CometsEvacuation.Components
 {
-    [ComponentDependency(typeof(CollisionComponent))]
+  //  [ComponentDependency(typeof(CollisionComponent))]
     public class DestroyableComponent : Component
     {
 

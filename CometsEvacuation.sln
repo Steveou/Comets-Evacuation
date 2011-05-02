@@ -3,19 +3,35 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CometsEvacuation", "CometsEvacuation\CometsEvacuation\CometsEvacuation.csproj", "{0384B02C-A711-4822-88BA-87B5C6CE7D68}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "CometsEvacuationContent", "CometsEvacuation\CometsEvacuationContent\CometsEvacuationContent.contentproj", "{81C6B953-D99C-41B1-BA6F-8767B27923F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CometsEvacuationContent", "CometsEvacuation\CometsEvacuationContent\CometsEvacuationContent.contentproj", "{81C6B953-D99C-41B1-BA6F-8767B27923F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|Windows Phone = Debug|Windows Phone
 		Debug|x86 = Debug|x86
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|Windows Phone = Release|Windows Phone
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0384B02C-A711-4822-88BA-87B5C6CE7D68}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{0384B02C-A711-4822-88BA-87B5C6CE7D68}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{0384B02C-A711-4822-88BA-87B5C6CE7D68}.Debug|Windows Phone.ActiveCfg = Debug|x86
+		{0384B02C-A711-4822-88BA-87B5C6CE7D68}.Debug|Windows Phone.Build.0 = Debug|x86
 		{0384B02C-A711-4822-88BA-87B5C6CE7D68}.Debug|x86.ActiveCfg = Debug|x86
 		{0384B02C-A711-4822-88BA-87B5C6CE7D68}.Debug|x86.Build.0 = Debug|x86
+		{0384B02C-A711-4822-88BA-87B5C6CE7D68}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{0384B02C-A711-4822-88BA-87B5C6CE7D68}.Release|Mixed Platforms.Build.0 = Release|x86
+		{0384B02C-A711-4822-88BA-87B5C6CE7D68}.Release|Windows Phone.ActiveCfg = Release|x86
+		{0384B02C-A711-4822-88BA-87B5C6CE7D68}.Release|Windows Phone.Build.0 = Release|x86
 		{0384B02C-A711-4822-88BA-87B5C6CE7D68}.Release|x86.ActiveCfg = Release|x86
 		{0384B02C-A711-4822-88BA-87B5C6CE7D68}.Release|x86.Build.0 = Release|x86
+		{81C6B953-D99C-41B1-BA6F-8767B27923F7}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{81C6B953-D99C-41B1-BA6F-8767B27923F7}.Debug|Windows Phone.ActiveCfg = Debug|x86
 		{81C6B953-D99C-41B1-BA6F-8767B27923F7}.Debug|x86.ActiveCfg = Debug|x86
+		{81C6B953-D99C-41B1-BA6F-8767B27923F7}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{81C6B953-D99C-41B1-BA6F-8767B27923F7}.Release|Windows Phone.ActiveCfg = Release|x86
 		{81C6B953-D99C-41B1-BA6F-8767B27923F7}.Release|x86.ActiveCfg = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution

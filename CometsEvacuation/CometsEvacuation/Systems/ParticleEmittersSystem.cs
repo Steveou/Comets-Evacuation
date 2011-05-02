@@ -80,10 +80,7 @@ namespace CometsEvacuation.Systems
 
             for (int i = 0; i < explodable.MaxParticles; i++)
             {
-
-
                 AddParticle(explodable.ParticleFactory.CreateParticle(spawnArea, random));
-
             }
         }
 

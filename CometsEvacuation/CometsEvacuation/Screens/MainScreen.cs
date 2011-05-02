@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using CometsEvacuation.Systems;
+using Nessie.Components;
 
 namespace CometsEvacuation.Screens
 {
@@ -18,8 +19,11 @@ namespace CometsEvacuation.Screens
         private TimeSpan elapsedTime;
         private TimeSpan lastCometSpawn;
         private TimeSpan lastPersonSpawn;
+        private TimeSpan lastParachuteSpawn;
 
         private ParticleEmittersSystem particles;
+
+        private BloodLevel bloodLevel;
 
         private int currentScore;
         private int currentRescuedScore;
@@ -63,6 +67,8 @@ namespace CometsEvacuation.Screens
 
             factory.CreatePaddle();
 
+            bloodLevel = new BloodLevel(Game, 2.0f);
+
             base.LoadContent();
         }
 
@@ -80,6 +86,7 @@ namespace CometsEvacuation.Screens
 
         public override void UnloadContent()
         {
+            bloodLevel.Unload();
             base.UnloadContent();
         }
 
@@ -102,8 +109,11 @@ namespace CometsEvacuation.Screens
 
             base.Draw(elapsedSeconds);
 
-            spriteBatch.DrawString(Game.Content.Load<SpriteFont>("fonts/standard"), "Stones Destroyed: " + currentScore.ToString(), Vector2.Zero, Color.Black);
-            spriteBatch.DrawString(Game.Content.Load<SpriteFont>("fonts/standard"), "Aliens Rescued: " + currentRescuedScore.ToString(), new Vector2(0, 30), Color.Black);
+            bloodLevel.Draw(spriteBatch);
+
+            spriteBatch.DrawString(Game.Content.Load<SpriteFont>("fonts/standard"), "Time: " + elapsedTime.ToString(@"mm\:ss"), Vector2.Zero, Color.Black);
+            spriteBatch.DrawString(Game.Content.Load<SpriteFont>("fonts/standard"), "Stones Destroyed: " + currentScore.ToString(), new Vector2(0, 30), Color.Black);
+            spriteBatch.DrawString(Game.Content.Load<SpriteFont>("fonts/standard"), "Aliens Rescued: " + currentRescuedScore.ToString(), new Vector2(0, 60), Color.Black);
 
 
             spriteBatch.End();
@@ -133,23 +143,48 @@ namespace CometsEvacuation.Screens
 
                 factory.CreatePerson();
             }
+
+            if (elapsedTime - lastParachuteSpawn > TimeSpan.FromSeconds(1f))
+            {
+                lastParachuteSpawn = elapsedTime;
+
+                factory.CreateParachute();
+            }
         }
 
         private void OnCollision(object sender, CollisionEventArgs args)
         {
+
+
+
             if (args.Object1 != null && args.Object2 != null)
             {
-                string name1 = args.Object1.GroupName;
-                string name2 = args.Object2.GroupName;
-
-                if ((name1 == "paddle" && name2 == "stones") || (name2 == "paddle" && name1 == "stones"))
+                if (CollisionBetween(args.Object1, args.Object2, "paddle", "stones"))
                 {
                     currentScore++;
                 }
+                else if (CollisionBetween(args.Object1, args.Object2, "stones", "persons"))
+                {
+                    bloodLevel.Raise();
+                }
 
-                if (name2 == "target_coll")
+
+                if (args.Object2.GroupName == "target_coll")
                     currentRescuedScore++;
             }
+        }
+
+        private bool CollisionBetween(GameObject object1, GameObject object2, string group1, string group2)
+        {
+            string name1 = object1.GroupName;
+            string name2 = object2.GroupName;
+
+            if ((name1 == group1 && name2 == group2) || (name2 == group1 && name1 == group2))
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }

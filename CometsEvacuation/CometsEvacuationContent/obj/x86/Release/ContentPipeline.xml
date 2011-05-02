@@ -64,6 +64,105 @@
       <Output>E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Release\Content\graphics\alien.xnb</Output>
       <Time>2011-04-27T17:30:16.1555632+02:00</Time>
     </Item>
+    <Item>
+      <Source>graphics\parachute.png</Source>
+      <Name>graphics\parachute</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Release\Content\graphics\parachute.xnb</Output>
+      <Time>2011-05-02T19:08:24.2580321+02:00</Time>
+    </Item>
+    <Item>
+      <Source>graphics\items\item1.png</Source>
+      <Name>graphics\items\item1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Release\Content\graphics\items\item1.xnb</Output>
+      <Time>2011-05-02T18:31:47.9044079+02:00</Time>
+    </Item>
+    <Item>
+      <Source>graphics\items\item2.png</Source>
+      <Name>graphics\items\item2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Release\Content\graphics\items\item2.xnb</Output>
+      <Time>2011-05-02T18:31:47.905408+02:00</Time>
+    </Item>
+    <Item>
+      <Source>graphics\items\item3.png</Source>
+      <Name>graphics\items\item3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Release\Content\graphics\items\item3.xnb</Output>
+      <Time>2011-05-02T18:31:47.905408+02:00</Time>
+    </Item>
+    <Item>
+      <Source>graphics\items\item4.png</Source>
+      <Name>graphics\items\item4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Release\Content\graphics\items\item4.xnb</Output>
+      <Time>2011-05-02T18:31:47.9504105+02:00</Time>
+    </Item>
+    <Item>
+      <Source>graphics\items\item6.png</Source>
+      <Name>graphics\items\item6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Release\Content\graphics\items\item6.xnb</Output>
+      <Time>2011-05-02T18:31:47.958411+02:00</Time>
+    </Item>
+    <Item>
+      <Source>graphics\items\item7.png</Source>
+      <Name>graphics\items\item7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Release\Content\graphics\items\item7.xnb</Output>
+      <Time>2011-05-02T18:31:47.9604111+02:00</Time>
+    </Item>
+    <Item>
+      <Source>graphics\items\item8.png</Source>
+      <Name>graphics\items\item8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Release\Content\graphics\items\item8.xnb</Output>
+      <Time>2011-05-02T18:31:47.9624112+02:00</Time>
+    </Item>
+    <Item>
+      <Source>graphics\paddle.png</Source>
+      <Name>graphics\paddle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Release\Content\graphics\paddle.xnb</Output>
+      <Time>2011-05-02T18:52:27.1412882+02:00</Time>
+    </Item>
+    <Item>
+      <Source>graphics\target.png</Source>
+      <Name>graphics\target</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Release\Content\graphics\target.xnb</Output>
+      <Time>2007-02-18T21:11:43.203125+01:00</Time>
+    </Item>
+    <Item>
+      <Source>graphics\ball.png</Source>
+      <Name>graphics\ball</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Illegal Sheep\Code\CometsEvacuation\CometsEvacuation\CometsEvacuation\bin\x86\Release\Content\graphics\ball.xnb</Output>
+      <Time>2007-06-22T17:28:13.265625+02:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
