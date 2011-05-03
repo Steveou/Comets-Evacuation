@@ -121,6 +121,7 @@
     <Compile Include="CometsGameObjectFactory.cs" />
     <Compile Include="Components\AnimatedTextureComponent.cs" />
     <Compile Include="Components\CollisionComponent.cs" />
+    <Compile Include="Components\DebugCollisionComponent.cs" />
     <Compile Include="Components\DestroyableComponent.cs" />
     <Compile Include="Components\ExplodableComponent.cs" />
     <Compile Include="Components\GravitationComponent.cs" />
@@ -129,6 +130,7 @@
     <Compile Include="Components\MovableComponent.cs" />
     <Compile Include="Components\MovementBoundariesComponent.cs" />
     <Compile Include="Components\RotationComponent.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="ParticleFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
@@ -137,6 +139,7 @@
     <Compile Include="Screens\MainScreen.cs" />
     <Compile Include="Screens\MenuScreen.cs" />
     <Compile Include="Systems\CollisionSystem.cs" />
+    <Compile Include="Systems\DebugDrawSystem.cs" />
     <Compile Include="Systems\GravitationSystem.cs" />
     <Compile Include="Systems\KeyboardMovementSystem.cs" />
     <Compile Include="Systems\ParachuteSystem.cs" />
@@ -144,7 +147,6 @@
     <Compile Include="Systems\RotationSystem.cs" />
     <Compile Include="Systems\SpriteAnimationSystem.cs" />
     <Compile Include="Systems\SpriteSystem.cs" />
-    <Compile Include="Timers.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />

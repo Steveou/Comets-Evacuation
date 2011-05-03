@@ -16,7 +16,7 @@ namespace CometsEvacuation.Components
     {
         public CollisionBox Box { get; set; }
 
-        public MovementBoundariesComponent()
+        public override void SetDefaultValues()
         {
             Box = new CollisionBox();
         }

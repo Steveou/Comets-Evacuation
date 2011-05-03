@@ -18,6 +18,13 @@ namespace CometsEvacuation.Components
         public bool UseXDirection { get; set; }
         public bool UseYDirection { get; set; }
 
+        public override void SetDefaultValues()
+        {
+            SetToArrowKeys();
+            UseXDirection = true;
+            UseYDirection = true;
+        }
+
         public void SetToArrowKeys()
         {
             Up = Keys.Up;

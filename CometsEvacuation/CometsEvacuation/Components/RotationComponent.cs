@@ -14,5 +14,12 @@ namespace CometsEvacuation.Components
         public float CurrentRotation { get; set; }
 
         public float RotationSpeed { get; set; }
+
+        public override void SetDefaultValues()
+        {
+            Origin = Vector2.Zero;
+            CurrentRotation = 0f;
+            RotationSpeed = 0f;
+        }
     }
 }

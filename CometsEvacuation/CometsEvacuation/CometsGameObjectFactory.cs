@@ -116,7 +116,8 @@ namespace CometsEvacuation
                 "stones",
                 typeof(BasicSpriteComponent), typeof(MovementBoundariesComponent), typeof(GravitationComponent),
                 typeof(ExplodableComponent),
-                typeof(RotationComponent)
+                typeof(RotationComponent),
+                typeof(DebugCollisionComponent)
                 );
 
             stone.Get<TextureComponent>().Texture = game.Content.Load<Texture2D>("graphics/comet1");
@@ -165,7 +166,8 @@ namespace CometsEvacuation
                 "person",
                 "persons",
                 typeof(BasicSpriteComponent), 
-                typeof(ExplodableComponent), typeof(RotationComponent)
+                typeof(ExplodableComponent), typeof(RotationComponent),
+                typeof(DebugCollisionComponent)
                 );
 
             person.Get<TextureComponent>().Texture = game.Content.Load<Texture2D>("graphics/alien");
@@ -214,9 +216,9 @@ namespace CometsEvacuation
                 "parachute",
                 "parachutes",
                 typeof(BasicSpriteComponent),
-             //   typeof(CollisionComponent),
                 typeof(DestroyableComponent),
                 typeof(GravitationComponent)
+              
                 );
 
             parachute.Get<TextureComponent>().Texture = game.Content.Load<Texture2D>("graphics/parachute");
@@ -227,16 +229,6 @@ namespace CometsEvacuation
                 );
 
             parachute.Get<MovableComponent>().Speed = (float)(random.NextDouble()) + 0.1f;
-            /*
-            parachute.Get<CollisionComponent>().SetValues(
-                parachute.Get<TransformComponent>().Position,
-                parachute.Get<TextureComponent>().Texture.Width,
-                parachute.Get<TextureComponent>().Texture.Height
-                );
-            */
-          //  parachute.Get<CollisionComponent>().collidesWith.Add("paddle");
-          //  parachute.Get<CollisionComponent>().collidesWith.Add("paddle");
-          //  parachute.Get<CollisionComponent>().collidesWith.Add("target_coll1");
 
             GameObject item = CreateObject(
                 "item",
@@ -246,7 +238,8 @@ namespace CometsEvacuation
                 typeof(DestroyableComponent),
                 typeof(ExplodableComponent),
                 typeof(ItemComponent),
-                typeof(GravitationComponent)
+                typeof(GravitationComponent),
+                typeof(DebugCollisionComponent)
                 );
 
             item.Get<TextureComponent>().Texture = game.Content.Load<Texture2D>("graphics/items/item1");
@@ -263,7 +256,7 @@ namespace CometsEvacuation
 
             item.Get<MovableComponent>().Speed = parachute.Get<MovableComponent>().Speed;
 
-          //  item.Get<CollisionComponent>().Origin = item.Get<TextureComponent>().Texture.GetCenter();
+          //  item.Get<CollisionComponent>().Origin = Vector2.Zero;
             item.Get<CollisionComponent>().SetValues(
                 item.Get<TransformComponent>().Position,
                 item.Get<TextureComponent>().Texture.Width,

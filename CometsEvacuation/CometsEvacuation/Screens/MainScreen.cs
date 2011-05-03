@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using CometsEvacuation.Systems;
 using Nessie.Components;
+using CometsEvacuation.Components;
 
 namespace CometsEvacuation.Screens
 {
@@ -49,7 +50,10 @@ namespace CometsEvacuation.Screens
             SetMockTextures();
 
             
+
+            
             SceneManager.AddSystem(new SpriteSystem(spriteBatch));
+            SceneManager.AddSystem(new DebugDrawSystem(spriteBatch));
 
             var collisionSystem = new CollisionSystem();
             collisionSystem.Collision += OnCollision;
@@ -68,6 +72,8 @@ namespace CometsEvacuation.Screens
             factory.CreatePaddle();
 
             bloodLevel = new BloodLevel(Game, 2.0f);
+
+            SceneManager.GameObjects.Extend<CollisionComponent, DebugCollisionComponent>();
 
             base.LoadContent();
         }
@@ -94,13 +100,19 @@ namespace CometsEvacuation.Screens
         {
             KeyboardState state = Keyboard.GetState();
 
-            elapsedTime = elapsedTime.Add(TimeSpan.FromSeconds(elapsedSeconds));
+            if (!state.IsKeyDown(Keys.Space))
+            {
 
-            UpdateSpawn(elapsedSeconds);
+                elapsedTime = elapsedTime.Add(TimeSpan.FromSeconds(elapsedSeconds));
 
-            Game.Window.Title = "Particles: " + particles.ParticlesCount.ToString();
+                UpdateSpawn(elapsedSeconds);
 
-            base.Update(elapsedSeconds);
+                Game.Window.Title = "Particles: " + particles.ParticlesCount.ToString();
+
+
+                base.Update(elapsedSeconds);
+
+            }
         }
 
         public override void Draw(double elapsedSeconds)

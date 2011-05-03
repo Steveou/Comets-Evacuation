@@ -24,6 +24,8 @@ namespace CometsEvacuation.Components
         public override void SetDefaultValues()
         {
             explodesWith = new List<string>();
+            ParticleFactory = null;
+            MaxParticles = 0;
         }
     }
 }

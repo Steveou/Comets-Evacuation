@@ -8,6 +8,7 @@ namespace CometsEvacuation.Components
 {
     public enum ItemType
     {
+        None,
         TimeBonus,
         PitchLarger,
         PitchSmaller,
@@ -21,5 +22,10 @@ namespace CometsEvacuation.Components
     public class ItemComponent : Component
     {
         public ItemType Type { get; set; }
+
+        public override void SetDefaultValues()
+        {
+            Type = ItemType.None;
+        }
     }
 }

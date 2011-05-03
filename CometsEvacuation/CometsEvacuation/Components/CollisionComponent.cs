@@ -19,16 +19,11 @@ namespace CometsEvacuation.Components
 
         public List<string> collidesWith;
 
-        public CollisionComponent()
-        {
-            
-        }
-
         public override void SetDefaultValues()
         {
             Box = new CollisionBox();
-
             collidesWith = new List<string>();
+            Origin = Vector2.Zero;
         }
 
         public void UpdatePosition(Vector2 position)
